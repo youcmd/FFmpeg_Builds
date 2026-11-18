@@ -33,9 +33,9 @@ done
 REPO="${GITHUB_REPOSITORY:-ffmpeg-builds/ffmpeg-builds}"
 REPO="${REPO,,}"
 REGISTRY="${REGISTRY_OVERRIDE:-ghcr.io}"
-BASE_IMAGE="${REGISTRY}/${REPO}/base:latest"
-TARGET_IMAGE="${REGISTRY}/${REPO}/base-${TARGET}:latest"
-IMAGE="${REGISTRY}/${REPO}/${TARGET}-${VARIANT}${ADDINS_STR:+-}${ADDINS_STR}:latest"
+BASE_IMAGE="${REGISTRY}/${REPO}/base:latest-${ARCH}"
+TARGET_IMAGE="${REGISTRY}/${REPO}/base-${TARGET}:latest-${ARCH}"
+IMAGE="${REGISTRY}/${REPO}/${TARGET}-${VARIANT}${ADDINS_STR:+-}${ADDINS_STR}:latest-${ARCH}"
 
 ffbuild_ffver() {
     case "$ADDINS_STR" in
